@@ -256,5 +256,13 @@
 			"Community",
 			"Web"
 		]
+	},
+	"300":{
+		"id": 300,
+		"title": "Workshop: FillTheForm 2.0",
+		"description": "Integration into the IDE and how to configure it",
+		"speakers": [
+			7
+		]
 	}
 }

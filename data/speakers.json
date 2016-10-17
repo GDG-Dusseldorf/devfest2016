@@ -373,12 +373,12 @@
 		"country": "Hamburg, Germany",
 		"title": "Full stack developer",
 		"shortBio": "I'm a full stack developer, experienced in delivering fully functional project prototypes.",
-		"bio": "I'm a full stack developer, experienced in delivering fully functional project prototypes. This means the creation of desktop or mobile apps, web apps or backend services for startups or enterprise customers, to quickly get started on a project, win a pitch, or raise VC money",
+		"bio": "Benedikt is a Mac / iOS engineer from Germany who worked as a backend / frontend developer in PHP, Python, & Javascript before becoming an indie Mac developer in 2011. He launched successful apps such as PhotoDesk (http://photodesk-app.com) or more recently Hirundo (http://stylemac.com/hirundo). Benedikt started investigating Swift on the server as he is interested in being able to reuse existing code for multiple targets.",
 		"socials": [
 			{
 				"icon": "website",
 				"name": "Website",
-				"link": "http://www.terhech.de/"
+				"link": "https://appventure.me"
 			},
 			{
 				"icon": "github",
@@ -403,7 +403,7 @@
 		"featured": false,
 		"title": "",
 		"shortBio": "Ralf Wondratschek is a Sr. Software Engineer, Android on the Evernote product team.",
-		"bio": "Ralf works on the core Evernote client with a special focus on software architecture, the camera and third party app integration. He also maintains several open-source projects on Github like the Evernote Android SDK and the job library for Android.\n Prior to Evernote, Ralf worked together with several companies in Germany and published as independent developer three apps in the Google Play Store.ing soon!",
+		"bio": "Ralf works on the core Evernote client with a special focus on software architecture, the camera and third party app integration. He also maintains several open-source projects on Github like the Evernote Android SDK and the job library for Android.\n Prior to Evernote, Ralf worked together with several companies in Germany and published as independent developer three apps in the Google Play Store!",
 		"socials": [
 			{
 				"icon": "website",
