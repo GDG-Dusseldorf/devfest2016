@@ -120,8 +120,8 @@
 	},
 	"120": {
 		"id": 120,
-		"title": "Hands-on Realm",
-		"description": "Do you know Realm? Realm is a new, open source, cross-platform mobile database technology. It is used by more than 1 billion people already. Its objective is to simplify, speed-up and improve mobile application development. At least, this is what they state at their website. But do they provide what they promise? And how does it work? What’s so new with Realm?",
+		"title": "Hands-on Realm Mobile Platform",
+		"description": "Realm Mobile Platform is a brand new tool by Realm. It was just released less than one month ago and instantly gained a lot of attention among the mobile development community. It combines the popular Realm Mobile Database with the complete new Realm Object Server. Its objective is to become the perfect backend for the next generation of reactive mobile apps. But what’s behind this promise? How does it work? What’s so new and why should you care?",
 		"speakers": [
 			5
 		],
