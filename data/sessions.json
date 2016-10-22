@@ -43,7 +43,7 @@
 	},
 	"112": {
 		"id": 112,
-		"title": "Angular 2 fundamentals and the role of rxjs",
+		"title": "Angular 2 fundamentals and the role of RxJs",
 		"description": "Angular 2 just became production ready. It is quite different from angular 1. It is however built with large applications in mind and utlizes most modern web concepts. It is blazingly fast and uses typescript as a first class citizen, just to name a few things. It also uses rxjs in front of promises. It is a different paradigm meant to fix issues with promises. Be prepared to become somewhat wiser as to what all these new concepts add to your developer experience.",
 		"speakers": [
 			6

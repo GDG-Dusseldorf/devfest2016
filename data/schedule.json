@@ -4,10 +4,10 @@
 		"dateReadable": "October 22",
 		"tracks": [
 			{
-				"title": "Main Track"
+				"title": "Track A"
 			},
 			{
-				"title": "Side Track"
+				"title": "Track B"
 			}
 		],
 		"timeslots": [
@@ -126,10 +126,10 @@
 		"dateReadable": "October 23",
 		"tracks": [
 			{
-				"title": "Main Track"
+				"title": "Track A"
 			},
 			{
-				"title": "Side Track"
+				"title": "Track B"
 			}
 		],
 		"timeslots": [
