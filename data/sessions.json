@@ -1,4 +1,11 @@
 {
+	"177": {
+		"id": 177,
+		"title": "Canceled - Replacement talk will be added soon",
+		"description": "There was a change in plan",
+		"language": "English",
+		"image": ""
+	},
 	"188": {
 		"id": 188,
 		"title": "GDG DevFest Düsseldorf 2016 Opening",
@@ -39,7 +46,8 @@
 		],
 		"tags": [
 			"Cloud"
-		]
+		],
+		"presentation": ""
 	},
 	"112": {
 		"id": 112,
@@ -177,6 +185,7 @@
 		"id": 130,
 		"title": "Make your Polymer web-app Progressive",
 		"description": "Polymer helps you organize your app and make it more meaningful. In this talk, I will show you how to make your app load faster with app shell, lazy loading etc. and another Tip and Tricks in PWA.\n\n",
+		"presentation": "https://speakerdeck.com/ozasadnyy/make-your-polymer-web-app-progressive",
 		"speakers": [
 			16
 		],
