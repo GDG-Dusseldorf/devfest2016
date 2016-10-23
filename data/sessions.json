@@ -46,8 +46,7 @@
 		],
 		"tags": [
 			"Cloud"
-		],
-		"presentation": ""
+		]
 	},
 	"112": {
 		"id": 112,
@@ -75,6 +74,7 @@
 		"id": 114,
 		"title": "How to do Scrum without killing yourself",
 		"description": "The point of Scrum, how to do it and the results to expect.",
+		"presentation": "https://drive.google.com/file/d/0ByM-uJev0mSCalk1Z1d5b0hDUmM/view",
 		"speakers": [
 			8
 		],
@@ -146,7 +146,8 @@
 		],
 		"tags": [
 			"Android"
-		]
+		],
+		"presentation": "https://speakerdeck.com/aegis123/use-code-generation-to-make-better-apps"
 	},
 	"127": {
 		"id": 127,
@@ -213,7 +214,8 @@
 		],
 		"tags": [
 			"Android"
-		]
+		],
+		"presentation": "https://speakerdeck.com/writtmeyer/constraintlayout-1"
 	},
 	"133": {
 		"id": 133,
