@@ -2,7 +2,7 @@
 
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/paper-item/paper-icon-item.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item-body.html">
@@ -11,7 +11,6 @@
 <link rel="import" href="../../bower_components/google-map/google-map.html">
 
 <link rel="import" href="../styles/shared-styles.html">
-<link rel="import" href="../behaviors/localize-behavior.html">
 
 
 <dom-module id="map-block">
@@ -116,16 +115,16 @@
 
     <template is="dom-if" if="[[selected]]">
       <google-map
-        zoom="[[app.data.location.pointer.zoom]]"
-        latitude="[[app.data.location.mapCenter.latitude]]"
-        longitude="[[app.data.location.mapCenter.longitude]]"
-        api-key="[[app.data.location.apiKey]]"
-        styles="[[options]]"
-        disable-zoom disable-default-ui
+              zoom="{$ location.pointer.zoom $}"
+              latitude="{$ location.mapCenter.latitude $}"
+              longitude="{$ location.mapCenter.longitude $}"
+              api-key="{$ location.apiKey $}"
+              styles="[[options]]"
+              disable-zoom disable-default-ui
       >
         <google-map-marker
-          latitude="[[app.data.location.pointer.latitude]]"
-          longitude="[[app.data.location.pointer.longitude]]"
+                latitude="{$ location.pointer.latitude $}"
+                longitude="{$ location.pointer.longitude $}"
         ></google-map-marker>
       </google-map>
     </template>
@@ -137,35 +136,29 @@
         <paper-card class="card">
           <div class="header paper-card">
             <div class="header-image" style$="background-image: url([[_currentImage]])"></div>
-            <div class="title-text">[[localize('location-title')]]</div>
+            <div class="title-text">{$ locationTitle $}</div>
           </div>
           <div class="paper-card-container">
             <div class="card-content list">
               <paper-icon-item disabled>
                 <iron-icon icon="icons:feedback" item-icon></iron-icon>
-                <paper-item-body>[[localize('location-description')]]</paper-item-body>
+                <paper-item-body>{$ locationDescription $}</paper-item-body>
               </paper-icon-item>
               <paper-icon-item disabled>
                 <iron-icon icon="icons:location" item-icon></iron-icon>
                 <paper-item-body two-line>
-                  <div>[[localize('location-address')]]</div>
-                  <div secondary>[[localize('location-address-short')]]</div>
+                  <div>{$ locationAddress $}</div>
+                  <div secondary>{$ locationAddressShort $}</div>
                 </paper-item-body>
               </paper-icon-item>
             </div>
             <div class="card-actions">
               <a class="bottom-link"
-                 href$="https://www.google.com/maps/dir/[[app.data.location.pointer.latitude]],[[app.data.location.pointer.longitude]]/@[[app.data.location.pointer.latitude]],[[app.data.location.pointer.longitude]],18z"
+                 href="https://www.google.com/maps/dir/{$ location.pointer.latitude $},{$ location.pointer.longitude $}/@{$ location.pointer.latitude $},{$ location.pointer.longitude $},18z"
                  target="_blank"
                  rel="noopener noreferrer"
               >
-                <paper-icon-button icon="icons:directions"></paper-icon-button> NAVIGATION
-              </a>
-              <a target="_blank"
-                 rel="noopener noreferrer"
-                 class="bottom-link"
-                 href="https://www.google.com/maps/dir/Gladbacher+Stra%C3%9Fe+67,+40219+D%C3%BCsseldorf,+Deutschland/Plockstra%C3%9Fe+14,+40219,+D%C3%BCsseldorf,+Deutschland/@51.2106769,6.7554848,16z/data=!4m14!4m13!1m5!1m1!1s0x47b8ca73a121e3e5:0x19fa746f598fcf7c!2m2!1d6.7557621!2d51.2123736!1m5!1m1!1s0x47b8ca73bfeeb479:0xce00bd82f4c954b8!2m2!1d6.75527!2d51.21133!3e0">
-               <paper-icon-button icon="icons:maps:local-parking"></paper-icon-button> MORE PARKING
+                <paper-icon-button icon="icons:directions"></paper-icon-button>
               </a>
             </div>
           </div>
@@ -176,84 +169,79 @@
   </template>
 
   <script>
-    (function () {
-      'use strict';
+      (function () {
+          'use strict';
 
-      Polymer({
+          Polymer({
 
-        is: 'map-block',
+              is: 'map-block',
 
-        behaviors: [
-          HOVERBOARD.LocalizeBehavior
-        ],
+              properties: {
+                  options: {
+                      type: String,
+                      value: function () {
+                          return [{
+                              stylers: [{
+                                  'lightness': 40
+                              }, {
+                                  'visibility': 'on'
+                              }, {
+                                  'gamma': 0.9
+                              }, {
+                                  'weight': 0.4
+                              }]
+                          }, {
+                              'elementType': 'labels',
+                              'stylers': [{
+                                  'visibility': 'on'
+                              }]
+                          }, {
+                              'featureType': 'water',
+                              'stylers': [{
+                                  'color': '#5dc7ff'
+                              }]
+                          }];
+                      }
+                  },
 
-        properties: {
-          options: {
-            type: String,
-            value: function () {
-              return [{
-                stylers: [{
-                  'lightness': 40
-                }, {
-                  'visibility': 'on'
-                }, {
-                  'gamma': 0.9
-                }, {
-                  'weight': 0.4
-                }]
-              }, {
-                'elementType': 'labels',
-                'stylers': [{
-                  'visibility': 'on'
-                }]
-              }, {
-                'featureType': 'water',
-                'stylers': [{
-                  'color': '#5dc7ff'
-                }]
-              }];
-            }
-          },
+                  images: {
+                      type: Array,
+                      value: {$ location.images | dump | safe $},
+                  },
 
-          _currentSourceIndex: {
-            type: Number,
-            value: 0
-          },
+                  _currentSourceIndex: {
+                      type: Number,
+                      value: 0
+                  },
 
-          _currentImage: {
-            type: String
-          }
-        },
+                  _currentImage: {
+                      type: String
+                  }
+              },
 
-        observers: [
-          'setImages(app.data.location.images)'
-        ],
+              ready: function () {
+                  this._currentImage = this.images[this._currentSourceIndex];
+                  if (this.images.length > 1) {
+                      var that = this;
+                      setInterval(function () {
+                          that.nextImage();
+                      }, 4000);
+                  }
+              },
 
-        setImages: function (images) {
-          if (!images) return;
-          this.images = images;
-          this._currentImage = this.images[this._currentSourceIndex];
-          if (this.images.length > 1) {
-            var that = this;
-            setInterval(function () {
-              that.nextImage();
-            }, 4000);
-          }
-        },
+              previousImage: function () {
+                  this._currentSourceIndex = (this._currentSourceIndex > 0) ? this._currentSourceIndex - 1 : this.images.length - 1;
+                  this._currentImage = this.images[this._currentSourceIndex];
+              },
 
-        previousImage: function () {
-          this._currentSourceIndex = (this._currentSourceIndex > 0) ? this._currentSourceIndex - 1 : this.images.length - 1;
-          this._currentImage = this.images[this._currentSourceIndex];
-        },
+              nextImage: function () {
+                  this._currentSourceIndex = (this._currentSourceIndex < this.images.length - 1) ? this._currentSourceIndex + 1 : 0;
+                  this._currentImage = this.images[this._currentSourceIndex];
+              }
 
-        nextImage: function () {
-          this._currentSourceIndex = (this._currentSourceIndex < this.images.length - 1) ? this._currentSourceIndex + 1 : 0;
-          this._currentImage = this.images[this._currentSourceIndex];
-        }
+          });
 
-      });
-
-    }());
+      }());
   </script>
 
 </dom-module>
